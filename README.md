@@ -57,4 +57,8 @@ se ainda nao ocorre a execuçao use as a pasta bin/publish
 
 
 
+![esolhendo-cidade](https://user-images.githubusercontent.com/66702896/161818700-a282eca0-3256-4b0f-a503-d148b3662375.gif)
+
+
+
 Att. Fabiano G. D. Bortolussi
