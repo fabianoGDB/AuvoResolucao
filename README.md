@@ -53,6 +53,7 @@ ___
 . dotnet add package jQuery --version 3.6.0
 . dotnet add package bootstrap --version 3.4.1
 
+se ainda nao ocorre a execuçao use as a pasta bin/publish
 
 
 
