@@ -22,8 +22,9 @@ namespace Auvo.ClimaTempo.WebApp.Controllers
         {
             // DateTime.Now.ToString("HH:mm:ss")
             var listaPrev = _context.PrevisaoClima.ToList();
-            var listaMaiores = _context.PrevisaoClima.OrderByDescending(x => x.TemperaturaMaxima).Where(x => x.DataPrevisao == DateTime.Today).ToList();
-            var listaMenores = _context.PrevisaoClima.OrderByDescending(x => x.TemperaturaMinima).Where(x => x.DataPrevisao == DateTime.Today).ToList();
+            var listaMenores = _context.PrevisaoClima.OrderBy(x => x.TemperaturaMinima).Where(x => x.DataPrevisao == DateTime.Today).ToList();
+            var listaMaiores = listaMenores.ToList();
+            listaMaiores.Reverse();
             List<PrevisaoClima> listaTemp1 = new List<PrevisaoClima>();
             List<PrevisaoClima> listaTemp2 = new List<PrevisaoClima>();
             
@@ -32,8 +33,6 @@ namespace Auvo.ClimaTempo.WebApp.Controllers
                 listaTemp1.Add(listaMaiores[i]);
                 listaTemp2.Add(listaMenores[i]);
             }
-            listaTemp1.Reverse();
-            listaTemp2.Reverse();
 
             ViewBag.PrevisoesHoje = _context.PrevisaoClima.Where(x => x.DataPrevisao == DateTime.Today).ToList();
             ViewBag.TemperaturasMaximas = listaTemp1;
