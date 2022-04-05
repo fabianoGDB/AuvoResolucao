@@ -1,0 +1,23 @@
+﻿@model Auvo.ClimaTempo.WebApp.ViewModel.PrevisaoClimaViewModel
+
+@{
+    ViewBag.Title = "Clima";
+}
+
+
+
+<div class="jumbotron">
+    <h1>Clima tempo simples</h1>
+</div>
+
+<div class="container" style="display: flex; margin-left: -25px; margin-right: -5px;  flex-direction: column; align-content: center">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between">
+        <div style="width: 45%;">@Html.Partial("_MaioresTemperaturas")</div>
+        <div style="width: 45%;">@Html.Partial("_MenoresTemperaturas")</div>
+    </div>
+
+    <div class="container">
+        @Html.Partial("_DropDownlistCidades")
+    </div>
+</div>
+

@@ -1,0 +1,34 @@
+﻿@model  Auvo.ClimaTempo.WebApp.ViewModel.PrevisaoClimaViewModel
+@{ 
+    string uf;
+}
+
+    <div class="panel panel-primary ">
+        <div class="panel-heading text-center">Mais Quente</div>
+        <div class="panel-body">
+            
+            @foreach (var item in ViewBag.TemperaturasMaximas)
+            {
+                if (item.DataPrevisao == DateTime.Today)
+                {
+            <div class="row">
+                @foreach (var estado in ViewBag.Estados)
+                {
+                    if (estado.Id == item.Cidade.EstadoId)
+                    {
+                        uf = estado.UF;
+                        <p class="col-xs-12  col-sm-12 col-md-6 col-lg-8"> @item.Cidade.Nome\ @uf </p>
+                    }
+                }
+
+                <p class="col-xs-6 col-md-3 col-lg-2" style="padding: 2px;"> Max @item.TemperaturaMinima&ordm;C</p>
+                <p class="col-xs-6 col-md-3 col-lg-2" style="padding: 2px;"> Min @item.TemperaturaMaxima&ordm;C</p>
+
+            </div>
+
+
+                }
+
+            }
+        </div>
+    </div>
